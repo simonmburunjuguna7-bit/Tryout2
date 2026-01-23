@@ -1,0 +1,115 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+:root {
+  --bg: #ffffff;
+  --text: #111;
+  --primary: #059669;
+  --secondary: #f3f4f6;
+}
+
+body.dark {
+  --bg: #0d1117;
+  --text: #f0f6fc;
+  --secondary: #1f2937;
+}
+
+header {
+  background: var(--secondary);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+nav a {
+  margin: 0 0.75rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--primary);
+}
+
+.btn, .btn-outline {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+}
+.btn-outline {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 2rem;
+  flex-wrap: wrap;
+}
+.hero-text {
+  flex: 1;
+  max-width: 500px;
+}
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.partners, .contact {
+  padding: 3rem 2rem;
+  background: var(--secondary);
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+blockquote {
+  background: var(--bg);
+  border-left: 4px solid var(--primary);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--secondary);
+}
