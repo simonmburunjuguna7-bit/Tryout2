@@ -1,1 +1,128 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
 
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+
+  display: flex;
+  justify-content: flex-start;       /* pins logo to left */
+  align-items: center;
+  gap: 32px;                         /* ← MAIN CHANGE: controls space between logo and nav (was large implicit gap) */
+
+  padding: 18px 40px;                /* keep original outer padding */
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.header nav {
+  display: flex;
+  gap: 28px;                         /* space between nav links */
+  margin-right: 0;                   /* removed unnecessary right margin */
+}
+
+.header nav a,
+.header .logo {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 40px;
+  right: 40px;
+  height: 1px;
+  background: rgba(255,255,255,0.4);
+}
+
+.header.scrolled {
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.header.scrolled nav a,
+.header.scrolled .logo {
+  color: #000000;
+}
+
+.header.scrolled::after {
+  display: none;
+}
+
+/* Mobile adjustment – slightly tighter but still readable */
+@media (max-width: 900px) {
+  .header {
+    padding: 16px 20px;
+    gap: 24px;                       /* smaller gap on mobile */
+  }
+  
+  .header nav {
+    gap: 16px;
+    font-size: 0.95rem;
+  }
+}
+
+/* ──────────────────────────────────────────────── */
+/* The rest of your styles remain unchanged below   */
+
+.hero {
+  background: url("../images/hero-avocado.jpg") center center / cover no-repeat;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero.small {
+  padding: 40px 20px;
+}
+
+.content {
+  padding: 40px 20px;
+}
+
+.btn {
+  margin-top: 24px;
+  padding: 14px 34px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 10px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: rgba(11, 122, 59, 0.85);
+  border-color: #0b7a3b;
+  transform: translateY(-3px);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f4f4f4;
+}
+
+/* ... rest of your styles (hero-bg, who-we-are, vision, why-slider, etc.) unchanged ... */
